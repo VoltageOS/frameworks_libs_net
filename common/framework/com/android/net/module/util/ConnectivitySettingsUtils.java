@@ -34,12 +34,14 @@ public class ConnectivitySettingsUtils {
     public static final int PRIVATE_DNS_MODE_PROVIDER_HOSTNAME = 3;
     public static final int PRIVATE_DNS_MODE_CLOUDFLARE = 4;
     public static final int PRIVATE_DNS_MODE_ADGUARD = 5;
+    public static final int PRIVATE_DNS_MODE_QUAD9 = 6;
 
     public static final String PRIVATE_DNS_DEFAULT_MODE = "private_dns_default_mode";
     public static final String PRIVATE_DNS_MODE = "private_dns_mode";
     public static final String PRIVATE_DNS_MODE_OFF_STRING = "off";
     public static final String PRIVATE_DNS_MODE_CLOUDFLARE_STRING = "cloudflare";
     public static final String PRIVATE_DNS_MODE_ADGUARD_STRING = "adguard";
+    public static final String PRIVATE_DNS_MODE_QUAD9_STRING = "quad9";
     public static final String PRIVATE_DNS_MODE_OPPORTUNISTIC_STRING = "opportunistic";
     public static final String PRIVATE_DNS_MODE_PROVIDER_HOSTNAME_STRING = "hostname";
     public static final String PRIVATE_DNS_SPECIFIER = "private_dns_specifier";
@@ -58,6 +60,8 @@ public class ConnectivitySettingsUtils {
                 return PRIVATE_DNS_MODE_CLOUDFLARE_STRING;
             case PRIVATE_DNS_MODE_ADGUARD:
                 return PRIVATE_DNS_MODE_ADGUARD_STRING;
+            case PRIVATE_DNS_MODE_QUAD9:
+                return PRIVATE_DNS_MODE_QUAD9_STRING;
             case PRIVATE_DNS_MODE_OPPORTUNISTIC:
                 return PRIVATE_DNS_MODE_OPPORTUNISTIC_STRING;
             case PRIVATE_DNS_MODE_PROVIDER_HOSTNAME:
@@ -75,6 +79,8 @@ public class ConnectivitySettingsUtils {
                 return PRIVATE_DNS_MODE_CLOUDFLARE;
             case "adguard":
                 return PRIVATE_DNS_MODE_ADGUARD;
+            case "quad9":
+                return PRIVATE_DNS_MODE_QUAD9;
             case "hostname":
                 return PRIVATE_DNS_MODE_PROVIDER_HOSTNAME;
             case "opportunistic":
@@ -110,6 +116,7 @@ public class ConnectivitySettingsUtils {
         if (!(mode == PRIVATE_DNS_MODE_OFF
                 || mode == PRIVATE_DNS_MODE_CLOUDFLARE
                 || mode == PRIVATE_DNS_MODE_ADGUARD
+                || mode == PRIVATE_DNS_MODE_QUAD9
                 || mode == PRIVATE_DNS_MODE_OPPORTUNISTIC
                 || mode == PRIVATE_DNS_MODE_PROVIDER_HOSTNAME)) {
             throw new IllegalArgumentException("Invalid private dns mode: " + mode);
